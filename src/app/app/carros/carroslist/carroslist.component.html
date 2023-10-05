@@ -1,0 +1,25 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Ano</th>
+			<th scope="col">Detalhe</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let carro of carrosList; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+                {{ carro.nome }}
+			</td>
+			<td>
+                {{ carro.ano  }}
+            </td>
+            <td >
+                <input type="button"  routerLink="/admin/pessoas/details" value="Ver">
+            </td>
+			
+		</tr>
+	</tbody>
+</table>
