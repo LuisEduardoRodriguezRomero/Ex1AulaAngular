@@ -20,6 +20,7 @@ export class CarrosdetailsComponent {
     let id = this.router.snapshot.paramMap.get('id');
 
     
+    console.log(id);
   
   }
   

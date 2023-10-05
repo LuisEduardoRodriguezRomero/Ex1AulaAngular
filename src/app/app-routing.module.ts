@@ -14,9 +14,9 @@ const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path:"admin", component: IndexComponent,children:[
        {path:"pessoas", component: ListpessoasComponent},
-       {path:"pessoas/details", component: PessoasdetailsComponent},
+       {path:"pessoas/details/:id", component: PessoasdetailsComponent},
        {path:"livros", component: LivroslistComponent},
-       {path:"livros/details", component: LivrosdetailsComponent},
+       {path:"livros/details/:id", component: LivrosdetailsComponent},
        {path:"carros", component: CarroslistComponent},
        {path:"carros/details/:id", component: CarrosdetailsComponent}
 

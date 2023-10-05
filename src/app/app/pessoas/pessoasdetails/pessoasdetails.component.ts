@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Pessoa } from '../Pessoa';
 
 @Component({
   selector: 'app-pessoasdetails',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./pessoasdetails.component.scss']
 })
 export class PessoasdetailsComponent {
+
+
+  router = inject(ActivatedRoute)
+  pessoa!: Pessoa;
+
+
+  constructor(){
+
+    let id = this.router.snapshot.paramMap.get('id');
+
+    
+    console.log(id);
+  
+  }
+  
 
 }

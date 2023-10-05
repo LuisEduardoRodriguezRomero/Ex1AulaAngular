@@ -1,6 +1,6 @@
 export class Carro{
 
-    id!: number;
+    id!: string;
     nome!: string;
     ano!: number;
 
