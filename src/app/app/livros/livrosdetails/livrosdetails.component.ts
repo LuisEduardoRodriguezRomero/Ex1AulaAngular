@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Livros } from '../livros';
+import { eventListeners } from '@popperjs/core';
 
 @Component({
   selector: 'app-livrosdetails',
@@ -11,7 +12,9 @@ export class LivrosdetailsComponent {
 
 
   router = inject(ActivatedRoute)
-  livro!: Livros;
+  livro: Livros = new Livros("","");
+
+  @Output() retorno = new EventEmitter<Livros>();
 
 
   constructor(){
@@ -21,6 +24,15 @@ export class LivrosdetailsComponent {
     
     console.log(id);
   
+  }
+
+
+
+
+  salvar(){
+
+    this.retorno.emit(this.livro);
+
   }
 
 }

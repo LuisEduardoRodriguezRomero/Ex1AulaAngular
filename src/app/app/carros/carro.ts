@@ -1,7 +1,14 @@
 export class Carro{
 
-    id!: string;
+   
     nome!: string;
     ano!: number;
+
+
+    constructor(nome:string,ano:number){
+
+        this.nome = nome;
+        this.ano = ano;
+    }
 
 }

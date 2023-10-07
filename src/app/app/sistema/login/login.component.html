@@ -5,16 +5,16 @@
 <form class="form-horizontal">
     <div class="form-group col-md-4 ">
       <label for="exampleInputEmail1">User</label>
-      <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User">
+      <input type="text" class="form-control " name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User" [(ngModel)]= "usuario.login"/>
      
     </div>
     <br>
     <div class="form-group col-md-4 ">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" name="exampleInputPassword1" placeholder="Password" [(ngModel)]= "usuario.senha"/>
     </div>
     <br>
-    <button type="submit" routerLink="/admin/pessoas" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary" (click)="logar()">Login</button>
   </form>
 
 </div>

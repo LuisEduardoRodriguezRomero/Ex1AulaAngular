@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pessoa } from '../Pessoa';
 
@@ -10,8 +10,10 @@ import { Pessoa } from '../Pessoa';
 export class PessoasdetailsComponent {
 
 
-  router = inject(ActivatedRoute)
-  pessoa!: Pessoa;
+  router = inject(ActivatedRoute);
+  pessoa: Pessoa = new Pessoa("",0);
+
+  @Output() retorno = new EventEmitter<Pessoa>();
 
 
   constructor(){
@@ -23,5 +25,10 @@ export class PessoasdetailsComponent {
   
   }
   
+
+  salvar(){
+
+    this.retorno.emit(this.pessoa);
+  }
 
 }

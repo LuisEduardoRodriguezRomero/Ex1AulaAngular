@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { Carro } from '../carro';
 import { ActivatedRoute } from '@angular/router';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-carrosdetails',
@@ -12,7 +13,9 @@ export class CarrosdetailsComponent {
 
 
   router = inject(ActivatedRoute)
-  carro!: Carro;
+  carro: Carro = new Carro("",0);
+
+  @Output() retorno = new EventEmitter<Carro>();
 
 
   constructor(){
@@ -22,6 +25,12 @@ export class CarrosdetailsComponent {
     
     console.log(id);
   
+  }
+
+
+  salvar(){
+
+    this.retorno.emit(this.carro);
   }
   
 
